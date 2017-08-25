@@ -1,14 +1,14 @@
 package com.globo.ateam.gsh623.controllers;
 
-import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
+@RequestMapping("/")
 public class RootController {
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET, consumes = MediaType.ALL_VALUE)
+    @GetMapping(value = {"{.*}", ""})
     public String get() {
         return "OK";
     }
