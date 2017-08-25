@@ -1,4 +1,4 @@
-package com.globo.ateam.gsh623.utils;
+package com.globo.ateam.uzi.utils;
 
 public class DefaultJmeterProperties {
     

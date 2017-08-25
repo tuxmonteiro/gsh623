@@ -1,4 +1,4 @@
-package com.globo.ateam.gsh623.controllers;
+package com.globo.ateam.uzi.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.globo.ateam</groupId>
-	<artifactId>gsh623</artifactId>
+	<artifactId>uzi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>gloader</name>
+	<name>uzi</name>
 	<description>A simple test loader service</description>
 
 	<parent>

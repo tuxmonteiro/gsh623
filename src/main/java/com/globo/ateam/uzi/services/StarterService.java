@@ -1,4 +1,4 @@
-package com.globo.ateam.gsh623.services;
+package com.globo.ateam.uzi.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

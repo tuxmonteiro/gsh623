@@ -1,6 +1,6 @@
-package com.globo.ateam.gsh623.services;
+package com.globo.ateam.uzi.services;
 
-import com.globo.ateam.gsh623.utils.DefaultJmeterProperties;
+import com.globo.ateam.uzi.utils.DefaultJmeterProperties;
 import org.apache.jmeter.control.LoopController;
 import org.apache.jmeter.engine.StandardJMeterEngine;
 import org.apache.jmeter.extractor.JSR223PostProcessor;

@@ -1,4 +1,4 @@
-package com.globo.ateam.gsh623;
+package com.globo.ateam.uzi;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
