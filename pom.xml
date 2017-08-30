@@ -23,6 +23,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
         <jmeter.version>3.2</jmeter.version>
+        <timestamp>${maven.build.timestamp}</timestamp>
     </properties>
 
 	<dependencies>

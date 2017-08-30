@@ -1,11 +1,15 @@
 package com.globo.ateam.uzi.services;
 
 import com.globo.ateam.uzi.utils.DefaultJmeterProperties;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.converters.reflection.PureJavaReflectionProvider;
 import org.apache.jmeter.control.LoopController;
 import org.apache.jmeter.engine.StandardJMeterEngine;
 import org.apache.jmeter.extractor.JSR223PostProcessor;
+import org.apache.jmeter.gui.action.Save;
 import org.apache.jmeter.modifiers.JSR223PreProcessor;
 import org.apache.jmeter.protocol.http.sampler.HTTPSampler;
+import org.apache.jmeter.save.SaveService;
 import org.apache.jmeter.testelement.TestPlan;
 import org.apache.jmeter.threads.ThreadGroup;
 import org.apache.jmeter.util.JMeterUtils;
@@ -15,7 +19,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -76,6 +82,15 @@ public class JmeterService {
         testPlanTree.add("httpSampler", httpSampler);
         testPlanTree.add("jsr223PreProcessor", jsr223PreProcessor);
         testPlanTree.add("jsr223PostProcessor", jsr223PostProcessor);
+
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        XStream xStream = new XStream(new PureJavaReflectionProvider());
+        xStream.toXML(jsr223PreProcessor, os);
+
+        JMeterUtils.setJMeterHome("/Users/m.monteiro/.bzt/jmeter-taurus/3.2");
+        SaveService.loadProperties();
+        if(false) SaveService.saveElement(jsr223PreProcessor, os);
+        log.error(new String(os.toByteArray(), Charset.defaultCharset()));
 
         // Run Test Plan
         jmeter.configure(testPlanTree);
